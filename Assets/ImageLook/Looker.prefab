@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2752856911993189308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1655555336348919821}
+  - component: {fileID: 7687897707963816575}
+  - component: {fileID: 5969990510031684980}
+  m_Layer: 0
+  m_Name: Looker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1655555336348919821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2752856911993189308}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7687897707963816575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2752856911993189308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c48cb4bdc86a8b49bfd1294e5280b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hiddenLayers: 25,10,10,5
+  inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 1
+  outputs:
+  - 0
+  - 0
+  score: 0
+  network:
+    layers: []
+--- !u!114 &5969990510031684980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2752856911993189308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0e52f51641bfb47870f84cd4510f3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mogus:
+  - {fileID: 2800000, guid: b4ccbe57eacb4a14cb24679a1205278a, type: 3}
+  - {fileID: 2800000, guid: 6b0e098ce69bafa48b4f0cfe254bc073, type: 3}
+  - {fileID: 2800000, guid: 6e12195b7c8d26d448cf4e41078b61e6, type: 3}
+  - {fileID: 2800000, guid: e73c437288fcf39439c97461fa59f7d7, type: 3}
+  - {fileID: 2800000, guid: c0cf83fb76e90bf4cabd1976018c2d1f, type: 3}
+  - {fileID: 2800000, guid: 77a1f1576edc0c84cb8bcf62ced0ead0, type: 3}
+  - {fileID: 2800000, guid: 8ea72a2ca2aef564e9c18950ee675b34, type: 3}
+  - {fileID: 2800000, guid: bbc21361edfa14f4d850a3a4892aaa45, type: 3}
+  isMogus: 0101010100000000
