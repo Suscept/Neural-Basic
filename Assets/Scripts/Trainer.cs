@@ -40,14 +40,12 @@ public class Trainer : MonoBehaviour
 
     private List<AI.Network> networkCache = new List<AI.Network>();
 
-    private bool loadingScene;
-
     private int unfinishedAgents;
 
     private float logTimer;
 
+    private bool loadingScene;
     private bool newGeneration;
-
     private bool waitingForExport;
 
     public enum TrainingMode { timed, waitForAll};
