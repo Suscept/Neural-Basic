@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class Trainer : MonoBehaviour
 {
     public static Trainer instance;
     public const float trainingFramerate = 60;
     public static float trainingDeltatime;
+
+    public TextAsset importedNetwork;
 
     [Header("Agents")]
     public GameObject agent;
@@ -45,8 +48,7 @@ public class Trainer : MonoBehaviour
 
     private bool newGeneration;
 
-    public List<int> sort1 = new List<int>();
-    public List<int> sort2 = new List<int>();
+    private bool waitingForExport;
 
     public enum TrainingMode { timed, waitForAll};
     
@@ -72,29 +74,13 @@ public class Trainer : MonoBehaviour
         AI agentAi = agent.GetComponent<AI>();
         for (int i = 0; i < agentAmount; i++)
         {
-            SpawnAgent(AI.NewNetwork(agentAi.inputs.Length, agentAi.outputs.Length, agentAi.hiddenLayers, initialWeightRange), true, i);
+            AI.Network net = AI.NewNetwork(agentAi.inputs.Length, agentAi.outputs.Length, agentAi.hiddenLayers, initialWeightRange);
+            if (importedNetwork)
+                net = NewFromTemplate(AI.JsonToNetwork(importedNetwork.text));
+            SpawnAgent(net, true, i);
         }
 
         generationTimer = generationTime;
-
-
-        int cum = sort1.Count;
-        for (int i = 0; i < cum; i++)
-        {
-            int bestAi = sort1[0];
-            int bestIndex = 0;
-            for (int z = 0; z < sort1.Count; z++)
-            {
-                int fart = sort1[z];
-                if (fart > bestAi)
-                {
-                    bestAi = fart;
-                    bestIndex = z;
-                }
-            }
-            sort1.RemoveAt(bestIndex);
-            sort2.Add(bestAi);
-        }
     }
 
     // Update is called once per frame
@@ -151,8 +137,13 @@ public class Trainer : MonoBehaviour
     {
         List<AI.Network> networks = GetAiSorted(out float bestScore);
 
+        if (waitingForExport)
+            ExportAI(networks[0]);
         if (logFitness && logTimer <= 0)
+        {
             Debug.Log("Fitness: " + bestScore + " Generation: " + generationCount);
+            logTimer = logRate;
+        }
         generationCount++;
 
         // Cull low scoring networks
@@ -191,6 +182,19 @@ public class Trainer : MonoBehaviour
         unfinishedAgents--;
         if (unfinishedAgents <= 0 && trainingMode == TrainingMode.waitForAll)
             newGeneration = true;
+    }
+
+    public void ExportAI()
+    {
+        waitingForExport = true;
+    }
+
+    public void ExportAI(AI.Network network)
+    {
+        waitingForExport = false;
+        string path = Application.dataPath + "/network_" + network.GetHashCode() + ".json";
+        Debug.Log("exporting network: " + path);
+        File.WriteAllText(path, JsonUtility.ToJson(network));
     }
 
     private List<AI.Network> GetAiSorted(out float bestScore)
@@ -287,5 +291,13 @@ public class Trainer : MonoBehaviour
         }
 
         return newNetwork;
+    }
+
+    private void OnGUI()
+    {
+        if (GUILayout.Button("Export best network"))
+        {
+            ExportAI();
+        }
     }
 }
