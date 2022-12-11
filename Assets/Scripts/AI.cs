@@ -130,6 +130,16 @@ public class AI : MonoBehaviour
         return net;
     }
 
+    public static string NetworkToJson(Network network)
+    {
+        return JsonUtility.ToJson(network);
+    }
+
+    public static Network JsonToNetwork(string json)
+    {
+        return (Network)JsonUtility.FromJson(json, typeof(Network));
+    }
+
     [System.Serializable]
     public class Network
     {
