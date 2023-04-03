@@ -108,7 +108,7 @@ public class Relay : MonoBehaviour
         ai.inputs[4] = foodVector.z;
         ai.inputs[5] = foodDist;
 
-        ai.RunNetwork();
+        ai.FeedForward();
         #endregion
 
         #region Debug

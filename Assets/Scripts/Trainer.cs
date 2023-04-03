@@ -20,7 +20,7 @@ public class Trainer : MonoBehaviour
     public bool resetPhysicalAgents = true;
 
     [Header("Generation")]
-    public TrainingMode trainingMode;
+    public TrainingMode generationEndingMethod;
     public float generationTime = 10;
     public bool reloadScene = true;
     public bool logFitness = true;
@@ -95,7 +95,7 @@ public class Trainer : MonoBehaviour
         }
 
         generationTimer -= trainingDeltatime;
-        if (generationTimer <= 0 && trainingMode == TrainingMode.timed || newGeneration)
+        if (generationTimer <= 0 && generationEndingMethod == TrainingMode.timed || newGeneration)
         {
             generationTimer = generationTime;
             NextGeneration();
@@ -178,7 +178,7 @@ public class Trainer : MonoBehaviour
     public void MarkAgentComplete()
     {
         unfinishedAgents--;
-        if (unfinishedAgents <= 0 && trainingMode == TrainingMode.waitForAll)
+        if (unfinishedAgents <= 0 && generationEndingMethod == TrainingMode.waitForAll)
             newGeneration = true;
     }
 

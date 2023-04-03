@@ -32,7 +32,7 @@ public class CompactorRelay : MonoBehaviour
         ai.inputs[0] = position / maxHeight;
         ai.inputs[1] = speed;
 
-        ai.RunNetwork();
+        ai.FeedForward();
 
         float moveDir = Mathf.Sign(ai.outputs[0]);
 

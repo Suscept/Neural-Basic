@@ -29,7 +29,7 @@ public class BaldRelay : MonoBehaviour
     {
         ai.inputs[0] = target.position.x > transform.position.x ? 1 : -1;
         ai.score += Reward(Vector3.Distance(transform.position, target.position)) * Time.deltaTime;
-        ai.RunNetwork();
+        ai.FeedForward();
         rb.velocity = Vector3.right * ai.outputs[0];
     }
 

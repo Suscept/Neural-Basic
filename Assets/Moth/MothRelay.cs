@@ -54,7 +54,7 @@ public class MothRelay : MonoBehaviour
         ai.inputs[2] = ParseOut(ai.outputs[0]);
         ai.inputs[3] = ParseOut(ai.outputs[1]);
 
-        ai.RunNetwork();
+        ai.FeedForward();
 
         //ai.score = -Mathf.Pow(Vector3.Distance(transform.position, target.position), 2) * 0.03f;
         //ai.score += -targetDist * Trainer.trainingDeltatime;

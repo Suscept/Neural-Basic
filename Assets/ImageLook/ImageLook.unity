@@ -299,6 +299,137 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1506109620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1506109624}
+  - component: {fileID: 1506109623}
+  - component: {fileID: 1506109622}
+  - component: {fileID: 1506109621}
+  m_Layer: 0
+  m_Name: ImageLook
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1506109621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506109620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c48cb4bdc86a8b49bfd1294e5280b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hiddenLayers: 25,10,10,5
+  inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 0
+  - 0
+  score: 0
+  network:
+    layers: []
+--- !u!114 &1506109622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506109620}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ec4b9ff65919f4cb48e94c1fc6f4e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  importedNetwork: {fileID: 0}
+  agent: {fileID: 0}
+  agentAmount: 1
+  resetPhysicalAgents: 1
+  generationEndingMethod: 0
+  generationTime: 10
+  reloadScene: 1
+  logFitness: 1
+  logRate: 0.5
+  mutateAmount: 0.01
+  mutations: 1
+  initialWeightRange: 2
+--- !u!114 &1506109623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506109620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0e52f51641bfb47870f84cd4510f3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mogus:
+  - {fileID: 2800000, guid: b4ccbe57eacb4a14cb24679a1205278a, type: 3}
+  - {fileID: 2800000, guid: 6b0e098ce69bafa48b4f0cfe254bc073, type: 3}
+  - {fileID: 2800000, guid: 6e12195b7c8d26d448cf4e41078b61e6, type: 3}
+  - {fileID: 2800000, guid: e73c437288fcf39439c97461fa59f7d7, type: 3}
+  - {fileID: 2800000, guid: c0cf83fb76e90bf4cabd1976018c2d1f, type: 3}
+  - {fileID: 2800000, guid: 77a1f1576edc0c84cb8bcf62ced0ead0, type: 3}
+  - {fileID: 2800000, guid: 8ea72a2ca2aef564e9c18950ee675b34, type: 3}
+  - {fileID: 2800000, guid: bbc21361edfa14f4d850a3a4892aaa45, type: 3}
+  isMogus: 0101010100000000
+  runOnStart: 1
+  isMogusOutput:
+  - 1
+  - 0
+  isNotMogusOutput:
+  - 0
+  - 1
+--- !u!4 &1506109624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506109620}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.4260015, y: -0.17143011, z: -0.8109107}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1571022302
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1571022303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,22 +456,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1571022302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb20c2c01d97c86428d4775912c4474c, type: 3}
+  m_Script: {fileID: 11500000, guid: d7ec4b9ff65919f4cb48e94c1fc6f4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  importedNetwork: {fileID: 0}
   agent: {fileID: 2752856911993189308, guid: a5376bf4652090d488fd322b98cf0008, type: 3}
-  agentAmount: 15
+  agentAmount: 2
   resetPhysicalAgents: 0
-  trainingMode: 1
+  generationEndingMethod: 0
   generationTime: 0.1
   reloadScene: 0
   logFitness: 1
   logRate: 0.5
   mutateAmount: 0.01
-  mutations: 1
+  mutations: 1000
   initialWeightRange: 2
-  sort1: 0100000005000000020000000400000003000000
-  sort2: 
 --- !u!4 &1571022304
 Transform:
   m_ObjectHideFlags: 0
